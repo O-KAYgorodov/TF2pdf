@@ -5,16 +5,6 @@ from urllib.request import urlopen
 from urllib.error import HTTPError
 from html_parcer import html_parcer, getStringIndex
 
-def readFile(filename):
-    try:
-        file = open(filename)
-    except FileNotFoundError:
-        return None
-    else:
-        fileText = file.read()
-        file.close()
-        return fileText
-
 def gethtmltextfromlink(link):
     print('Downloading from source ' + link)
     return ((urlopen(link)).read()).decode("utf-8")#ret_val
